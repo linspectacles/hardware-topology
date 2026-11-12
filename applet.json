@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "id": "linspectacles-hardware-topology",
+  "name": "Hardware Topology",
+  "version": "0.0.8",
+  "author": "brunonlinespace",
+  "editor": "brunonlinespace",
+  "publisher": "brunonlinespace",
+  "organization_id": "linspectacles",
+  "organization_url": "https://github.com/linspectacles/",
+  "repository": "https://github.com/linspectacles/hardware-topology",
+  "order": 25,
+  "entrypoint": "hardware_topology/applet.py",
+  "factory": "create_applet",
+  "standalone": "standalone.py",
+  "description": "Read-only Linux hardware-topology inspector for CPU/core/cache locality, PCI devices and driver binding, richer NUMA structure and locality, IOMMU groups.",
+  "platforms": [
+    "linux"
+  ],
+  "read_only": true
+}
