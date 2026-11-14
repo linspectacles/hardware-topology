@@ -1,13 +1,3 @@
-<p align="center">
-  <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/hardware-topology.png">
-    <img
-      src="https://raw.githubusercontent.com/brunonlinespace/brunonlinespace/main/linspectacles/hardware-topology.png"
-      alt="Hardware Topology screenshot"
-      width="900"
-    >
-  </a>
-</p>
-
 # Hardware Topology
 
 **Expose. Explore. Explain.**
@@ -18,6 +8,16 @@ Current release: **0.0.8**
 
 Repository: <https://github.com/linspectacles/hardware-topology>
 
+<p align="center">
+  <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/hardware-topology.png">
+    <img
+      src="https://raw.githubusercontent.com/brunonlinespace/brunonlinespace/main/linspectacles/hardware-topology.png"
+      alt="Hardware Topology screenshot"
+      width="900"
+    >
+  </a>
+</p>
+
 ## What Hardware Topology is
 
 Hardware Topology answers a focused question: **how are CPUs, caches, NUMA nodes and PCI devices related, and what locality or binding information does the kernel expose?**
@@ -26,7 +26,7 @@ Hardware Topology is inspired in part by **Microsoft Sysinternals Coreinfo**, pa
 
 CPU vulnerability and mitigation state is intentionally no longer part of this applet; that kernel interface now belongs to the separate **[CPU Vulnerabilities](https://github.com/linspectacles/cpu-vulnerabilities)** applet.
 
-It keeps acquisition and interpretation close to the Linux interfaces actually used by the applet. When a source is unavailable, restricted, or does not report a field, the README does not imply that the applet can manufacture the missing information.
+The applet reports information available from its documented Linux sources. Data that is unavailable, restricted, or not reported by those sources remains explicitly unavailable rather than being inferred.
 
 ## Highlights
 
@@ -132,6 +132,16 @@ python3 linspectacles_hardware_topology/standalone.py
 
 No RPM installation instructions are included in this README.
 
+## LinSpectacles Hub
+
+This applet can run independently, but it can also be installed and used inside **[LinSpectacles Hub](https://github.com/linspectacles/linspectacles-hub)**.
+
+LinSpectacles Hub is the optional workbench for the LinSpectacles applet family. It provides shared applet discovery, navigation and management while each inspector remains independently runnable.
+
+To install a portable or user applet through the Hub, open **Configuration... → Applets** and add the applet ZIP. Once discovered, the applet can be enabled and opened from the Hub navigation.
+
+System-installed applets are discovered by the Hub from its system applet store and remain managed by the system package manager.
+
 ## Source layout and LinSpectacles integration
 
 The applet source is contained in:
@@ -149,7 +159,7 @@ linspectacles_hardware_topology/
     └── icon.png
 ```
 
-`applet.json` supplies the LinSpectacles applet identity and entrypoint metadata. `standalone.py` launches the applet directly, while the package's applet factory provides the host-loadable LinSpectacles integration used by the source.
+`applet.json` defines the applet's LinSpectacles identity and integration metadata. `standalone.py` provides direct standalone launching, while the applet entrypoint allows the same inspector to run inside LinSpectacles Hub.
 
 ## Configuration
 
@@ -170,6 +180,7 @@ GNU General Public License v3.0 or later. See [`LICENSE`](LICENSE).
 ## Links
 
 - LinSpectacles organisation: <https://github.com/linspectacles/>
+- LinSpectacles Hub: <https://github.com/linspectacles/linspectacles-hub>
 - Repository: <https://github.com/linspectacles/hardware-topology>
 - Issues: <https://github.com/linspectacles/hardware-topology/issues>
 
